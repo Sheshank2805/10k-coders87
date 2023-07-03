@@ -12,7 +12,7 @@ console.log(counting("Good Morning"));
 
 
 //counting no of vowels
-debugger
+
 function countingvowels(a){
     
     count=0;
