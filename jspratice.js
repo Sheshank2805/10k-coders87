@@ -1,3 +1,4 @@
+//counting number of characters in a string without any pre-defined methods 
 function counting(a){
     var count=0;
   for(i=0;a[i]!=undefined;i++){
