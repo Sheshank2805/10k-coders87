@@ -50,7 +50,7 @@ console.log(text.padStart(4,"0"));
 console.log(c.split(","));
 let d="sheshi$varma"
 console.log("string after converting into array using split method:",d.split("$"));
-let x="  Ameri  ca  "
+let x="  Ameri  ca  desi  confused   it reflects "
 console.log("string before removing spaces is:",x);
 console.log("string after removing empty spaces at start and end using trim method:",x.trim());
 console.log("string after removing spaces in between:",x.replace(/\s+/g,""));
