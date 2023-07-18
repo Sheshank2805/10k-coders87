@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <h2>mouse events</h2> 
+     <p onclick="greetings()">I am learning javascript</p>
+    <p ondblclick="greetings()">I am learning javascript</p>
+    <p onmouseout="greetings()">I am learning javascript</p>
+    <p onmouseup="greetings()">I am learning javascript</p>
+    <p onmousedown="greetings()">I am learning javascript</p> 
+     <h2>Keyboard events</h2>
+    <form onkeypress="greetings()">
+        <input type="text" name="fname">
+    </form>
+    <form onkeydown="greetings()">
+        <input type="text" name="fname">
+    </form>
+    <form onkeyup="greetings()">
+        <input type="text" name="fname">
+    </form> 
+    <h2 id="js" onclick="colorchange()">I am Learning Javascript</h2>
+    <form >
+        <h2>Login form</h2>
+        <label for="gmail">Mail Id</label><br>
+        <input type="email" id="gmail" name="username"><br>
+        <label for="Uname">User name</label><br>
+        <input type="text" id="Uname" name="username"><br>
+        <label for="password">Password</label><br>
+        <input type="text" id="password" name="username"><br>
+        <button type="button" onclick="autofiller()">Click me to autofill</button>
+    </form>
+   <script>
+    function greetings(){
+        alert("Hi!How Are You?")
+    }
+    document.getElementById("js").innerHTML="Javascript is Cool"
+    const element=document.getElementById('js').style
+    element.color='red';
+    element.backgroundImage='green';
+    //write method
+    let array=["sai","ram"]
+    array.forEach(displayer)
+function displayer(name){
+    document.write(name+"")
+}
+
+//elementbyid method
+    function colorchange(){
+        const element=document.getElementById('js').style
+    element.color='red';
+    element.fontSize='75px'
+    element.backgroundColor='green'
+    element.fontWeight='bold'
+    alert("js is so cool")
+    }
+//elementsbyname method
+    const name=document.getElementsByName("username")
+      name[0].value="sheshank2805@gmail.com"
+    name.forEach(namefiller)
+    function namefiller(element){
+        element.value="sheshank"
+    }
+    function autofiller(){
+        const name=document.getElementsByName("username")
+        name.forEach(namefiller)
+    function namefiller(element,index){
+        const names=["sheshank2805@gmail.com","Sheshank","Sheshank@20"]
+        element.value=names[index]
+    }
+    }
+    //checking validations
+    function autofiller(){
+        const name=document.getElementsByName("username")
+        name.forEach(namefiller)
+    function namefiller(element,index){
+        
+        if(element.value<4){
+            alert("enter more than four characters")
+        }else{
+            console.log(element.value);
+        }
+        
+    }
+}
+
+   </script>
+</body>
+</html>
