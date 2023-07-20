@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr class="tablecls">
+            <th>student Name</th>
+            <th>Age</th>
+            <th>Native Place</th>
+        </tr>
+        <tr class="tablecls">
+            <td>Sheshank</td>
+            <td>23</td>
+            <td>warangal</td>
+        </tr>
+        <tr class="tablecls">
+            <td>Ram</td>
+            <td>23</td>
+            <td>Hyderabad</td>
+        </tr>
+    </table>
+        <button type="button" onclick="Changedtableview()">Click Me To View Change in Table</button>
+        <ul>
+          <li>list 1</li>  
+          <li>list 2</li>
+          <li>list 3</li>  
+          <li>list 4</li> 
+          <li>list 5</li>  
+          <li>list 6</li>     
+        </ul>
+        <button type="button" onclick="Changedlistview()">Click me to view the list changed view</button>
+        <ul>
+            <li>list 1</li>  
+            <li>list 2</li>
+            <li class="list">list 3</li>  
+            <li class="list">list 4</li> 
+            <li class="list">list 5</li>  
+            <li>list 6</li>     
+          </ul>
+        <button type="button" onclick="Changedviewer()">Click me to view the list changed view</button>
+        <img src="https://i.pinimg.com/originals/e0/fd/25/e0fd25f9127a9a109a0648c83ee61643.png" alt="Bulboff" id="bulb" height="500px" width="500px">
+    <button type="button" onclick="onoff()">on/off</button>
+        <script>
+      //elementByClassName
+       const student=document.getElementsByClassName("tablecls")
+       const arraytable=[...student]
+       arraytable[0].backgroundColor="red"
+    //    arraytable[0][1].innerText="Age"
+    //    arraytable[2].innerText="Age"
+       console.log(arraytable);
+       arraytable.forEach(tableview)
+      function tableview(element){
+        element.textContent="Name/  age  / place"
+        element.style.color="red"
+    arraytable[0].backgroundColor="red"
+        element.style.backgroundColor="yellow"
+        element.style.fontsize="46px"
+      
+       }
+       function Changedtableview(){
+        const student=document.getElementsByClassName("tablecls")
+       const arraytable=[...student]
+      arraytable.forEach(tableview)
+      function tableview(element){
+        element.style.color="red"
+        element.style.backgroundColor="yellow"
+        element.style.fontSize="46px"
+        element.style.margin="5px"
+       }
+       }
+       function Changedlistview(){
+
+       
+       const list=document.getElementsByTagName("li")
+       const listarray=[...list]
+       console.log(listarray);
+    //    listarray[0].textContent="HELLO"
+       listarray.forEach(listchanger)
+       function listchanger(element){
+       element.textContent="Hello"
+       element.style.listType="none"
+       element.style.fontSize="36px"
+       element.style.color="blue"
+       element.style.backgroundColor="bisque"
+       }
+       }
+       function Changedviewer(){
+       const query=document.querySelector("ul .list")
+       console.log(query);
+       query.style.backgroundColor="purple"
+       const li=document.querySelectorAll("ul .list")
+       const listarr=[...li]
+       console.log(listarr);
+       listarr.forEach(viewer)
+       function viewer(element){
+        element.style.color="yellow"
+       }
+    }
+    let isbulbon=false;
+      function onoff(){
+        const bulbimg=document.getElementById("bulb")
+        if(isbulbon){
+            bulbimg.src="https://i.pinimg.com/originals/e0/fd/25/e0fd25f9127a9a109a0648c83ee61643.png"
+            bulbimg.style.height="500px"
+            bulbimg.style.width="500px"
+        }else{
+            bulbimg.src="https://previews.123rf.com/images/murika/murika1511/murika151100069/48123160-bright-glowing-incandescent-light-bulb-on-a-white-background.jpg"
+            bulbimg.style.height="500px"
+            bulbimg.style.width="500px"
+      }
+      isbulbon!=isbulbon
+    }
+        </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
