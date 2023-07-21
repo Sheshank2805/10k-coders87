@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="addlistitems()" style="background-color: blueviolet;">Add items</button>
+    <button type="button" onclick="removealllistitems()" style="background-color: brown;">Remove all list items</button>
+    <ul id="unorderedlist">
+          
+    </ul>
+    <button onclick="addRows()" style="background-color: cadetblue;">Add Rows</button>
+    <button type="button" onclick="removeRows()" style="background-color: crimson;">remove rows</button>
+    <table id="myTable" style="border: 5px solid black;text-align: center;">
+        <thead style="border: 5px solid black;">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>graduation Year</th>
+            </tr>
+        </thead>
+        <tbody id="Tabledata" style="border: 5px solid black;">
+        </tbody>
+    </table>
+    <script>
+        function removealllistitems(){
+            let ul=document.getElementById("unorderedlist")
+            ul.remove()
+        }
+        function addlistitems(){
+        let count=document.getElementsByTagName("li").length+1
+        let newlist=document.createElement("li")
+        let button=document.createElement("button")
+        button.textContent="remove"
+        button.style.color="azure"
+        button.style.backgroundColor="blue"
+        newlist.textContent=`list ${count}`
+        newlist.style.color="red"
+        let ul=document.getElementById("unorderedlist")
+        ul.appendChild(newlist)
+        newlist.appendChild(button)
+        button.onclick=function(){
+            this.parentElement.remove()
+        }
+        }
+        function removeRows(){
+            let tableBody=document.getElementById("Tabledata");
+            tableBody.remove()
+        }
+        function addRow(name, age, gyear) {
+    var tableBody = document.getElementById("Tabledata");
+
+    
+    var tr = document.createElement("tr");
+
+    
+    var nameCell = document.createElement("td");
+    var ageCell = document.createElement("td");
+    var gyearCell = document.createElement("td");
+
+    
+    nameCell.innerHTML = name;
+    ageCell.innerHTML = age;
+    gyearCell.innerHTML = gyear;
+
+    tr.appendChild(nameCell);
+    tr.appendChild(ageCell);
+    tr.appendChild(gyearCell);
+    tableBody.appendChild(tr);
+}
+function addRows() {
+    addRow("Sheshank", "23", "2021");
+    addRow("Sandeep", "26", "2018");
+    addRow("Ram", "22", "2022"); 
+    addRow("Nitheesh","23","2021")
+}
+    </script>
+</body>
+</html>
