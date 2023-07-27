@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #usernameDiv {
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div id="usernameDiv">
+        <label>Username</label>
+        <input type="text" id="userName" />
+        <label style="color: red; display: none" id="userNameErr"
+          >Please fill details</label
+        >
+      </div>
+
+      <button type="button" id="button">Submit</button>
+    </form>
+
+    <script>
+      let button = document.getElementById("button");
+      button.addEventListener("click", function () {
+        let userName = document.getElementById("userName");
+        let label = document.getElementById("userNameErr");
+
+        let regex = /20232022/;
+
+        if (userName.value && userName.value.trim() !== "") {
+          if (userName.value.length > 5) {
+            if (regex.test(userName.value)) {
+              alert("sucess");
+            } else {
+              label.innerHTML = "Username should contain 20232022 ";
+            }
+          } else {
+            userName.style.border = "2px solid red";
+            label.style.display = "flex";
+            label.innerHTML = "Please enter min 5 characters";
+          }
+        } else {
+          let label = document.getElementById("userNameErr");
+          let userName = document.getElementById("userName");
+
+          label.innerHTML = "Please enter the value ";
+          label.style.display = "flex";
+
+          userName.style.border = "2px solid red";
+        }
+      });
+
+      //validation : overall validation
+
+      // individual validation or field validation
+
+      //   username:
+      //    1. Please enter the value
+      //    2.Please enter valid of min 5 characters
+
+      //Regex : it is used for power full pattern matching , string search and replace
+    </script>
+  </body>
+</html>
